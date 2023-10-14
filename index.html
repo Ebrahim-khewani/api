@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/help.js"></script>    
+  </head>
+  <body >
+
+    <!-- Example Code -->
+    <nav>      
+        <div class="navbar  navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a> 
+            <div class="fs-3 text-primary"> <a href="char.html" class="text-uppercase text-decoration-none" > show chart</a> </div>
+ 
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                Add default image </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">CHOSE image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <!--  -->
+            <input type="file" class="form-control" id="inputfile" accept="image/png, image/jpeg">
+            <img src="#" class="d-none img-thumbnail" id="imgPictur" alt="..">
+
+            <div class="row mt-3 mb-5 justify-content-center">
+                <div class="row">
+                  <button class="btn btn-primary" id ="btn-add-prodcut">Add to Local Storage</button>
+                </div>
+              </div>
+              
+            <!--  -->
+            </div>
+          
+          
+            </div>
+         
+              <select class="form-select w-auto" id="floatingSelect" aria-label="Floating label select example">
+                
+                <option value="10"> 10</option>
+            
+                <option value="20"> 20</option>
+            
+                <option value="30"> 30</option>
+            
+                
+                </select>
+          
+            </div>
+            
+        </div>       
+    </nav>        
+    <!-- End Example Code -->
+       
+ <div id = "app">  </div>
+ <script src="js/api.js"></script>
+  </body>
+</html>
