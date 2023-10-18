@@ -13,24 +13,36 @@ app = document.getElementById('app');
 
 
 
+
   const fetchPostsData = (num) => {
     return new Promise((resolve, reject) => {
   fetch("https://jsonplaceholder.typicode.com/photos?_limit="+num)
     .then((res) => res.json())
-    .then((posts) => setStorage("posts", posts))
+    .then((posts) => {setStorage("posts", posts)
+    userComponent(getStorage("posts"))
     resolve("done");
+  })
+
+ 
     })
 };
 
 
 
- limit_num = el('#floatingSelect')
+limit_num = el('#floatingSelect')
+navbarId  = el('#navbarId')
+
+
+const ftech= async()=>{
+  await fetchPostsData(10)
+ }
+
+ ftech()
 
  limit_num.addEventListener('change', async (event) => {
   // Get the selected value
   const selectedValue = event.target.value;
   await fetchPostsData(selectedValue)
-  await userComponent(getStorage("posts"))
   
   // await userComponent( getStorage("posts"))
 });
@@ -80,7 +92,9 @@ var openFile = function (file) {
 
   // .catch((error) => console.error(error));
 
-  
+  navbarId.addEventListener('click',()=>{
+    show()
+  });
 
  //renderHtml(INNER_MIN);
   
@@ -110,3 +124,28 @@ const renderData = () => {
 
   isDataLoaded = true;
 };
+
+let hx=0;
+let hy=0;
+const show = () =>
+{
+ 
+Toastify(
+  {
+  text: "This is a toast",
+  duration: 500,
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "left", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right, #00b09b, #96c93d)",
+  },
+  offset: {
+    x: hx+=40, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+    y: hy+=30// vertical axis - can be a number or a string indicating unity. eg: '2em'
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
+}
