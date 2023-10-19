@@ -1,3 +1,4 @@
+
 /**
  * Retrieves the first element that matches the specified selector.
  *

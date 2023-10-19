@@ -87,13 +87,14 @@ var openFile = function (file) {
   reader.onload = function () {
     imgElement.src = reader.result;
     setStorage("image", reader.result); 
+    show('You add default image');
   };
 };
 
   // .catch((error) => console.error(error));
 
   navbarId.addEventListener('click',()=>{
-    show()
+    show('')
   });
 
  //renderHtml(INNER_MIN);
@@ -127,17 +128,17 @@ const renderData = () => {
 
 let hx=0;
 let hy=0;
-const show = () =>
+const show = (txt) =>
 {
  
 Toastify(
   {
-  text: "This is a toast",
+  text: txt?txt:"This is a toast",
   duration: 500,
   newWindow: true,
   close: true,
   gravity: "top", // `top` or `bottom`
-  position: "left", // `left`, `center` or `right`
+  position: "right", // `left`, `center` or `right`
   stopOnFocus: true, // Prevents dismissing of toast on hover
   style: {
     background: "linear-gradient(to right, #00b09b, #96c93d)",
